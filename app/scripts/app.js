@@ -19,6 +19,7 @@ angular
     'firebase'
   ])
   .constant('_', window._)
+  .value('FIREBASE_REF', 'https://mtgl.firebaseio.com/')
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
