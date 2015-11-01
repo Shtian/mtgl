@@ -1,8 +1,16 @@
 <div class="jumbotron">
   <h1>Create a collection</h1>
   <p class="lead">
-    Start typing a username for which to bind your magic card collection to:
+    Start typing a unique collection name for which to bind your magic card collection to:
   </p>
-  <p><input type="text" class="username" /></p>
-  <p><a class="btn btn-lg btn-success disabled" ng-href="#/">Create!<span class="glyphicon glyphicon-ok"></span></a></p>
+  <p><input type="text" class="username" ng-model="collectionName" /></p>
+  <p><button class="btn btn-lg btn-success" ng-disabled="!isNameUnique()" ng-click="createCollection()">Create!<span class="glyphicon glyphicon-ok"></span></button></p>
+</div>
+
+<div class="">
+  <ul ng-repeat="collection in collections">
+    <li>
+      <a href="#/collection/{{collection.url}}">{{collection.name}}</a>
+    </li>
+  </ul>
 </div>
