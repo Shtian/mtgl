@@ -13,10 +13,13 @@ angular.module('alexandriaApp')
     $scope.collections = $firebaseArray(ref);
 
     $scope.createCollection = function() {
-      if($scope.isNameUnique()) {
+      if ($scope.isNameUnique()) {
         var name = $scope.collectionName;
         var url = name.trim().toLowerCase().replace(/\s/g, '-').replace(/[^a-zA-Z0-9_.+-]/g, '');
-        $scope.collections.$add({ name: name, url: url });
+        $scope.collections.$add({
+          name: name,
+          url: url
+        });
         console.log('collection added', $scope.collectionName);
         $scope.collectionName = '';
       }
@@ -24,12 +27,14 @@ angular.module('alexandriaApp')
 
     $scope.isNameUnique = function() {
       var name = $scope.collectionName;
-      if(name) {
-         if($scope.collections && $scope.collections.length){
-           return !_.some($scope.collection, { 'name': $scope.collectionName});
-         } else {
-           return true;
-         }
+      if (name) {
+        if ($scope.collections && $scope.collections.length) {
+          return !_.some($scope.collection, {
+            'name': $scope.collectionName
+          });
+        } else {
+          return true;
+        }
       }
       return false;
     };

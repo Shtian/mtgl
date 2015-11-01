@@ -1,0 +1,21 @@
+.search-section, .collection-section {
+  li {
+    list-style: none;
+  }
+}
+
+.collection-section {
+  li {
+    position: relative;
+    img {
+      position: absolute;
+      top: 0;
+      left: 50px;
+      display: none;
+    }
+  }
+
+  li:hover img {
+    display: inline;
+  }
+}

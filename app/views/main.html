@@ -1,16 +1,42 @@
-<div class="jumbotron">
-  <h1>Create a collection</h1>
-  <p class="lead">
-    Start typing a unique collection name for which to bind your magic card collection to:
-  </p>
-  <p><input type="text" class="username" ng-model="collectionName" /></p>
-  <p><button class="btn btn-lg btn-success" ng-disabled="!isNameUnique()" ng-click="createCollection()">Create!<span class="glyphicon glyphicon-ok"></span></button></p>
+<div class="container">
+  <div class="jumbotron">
+    <h1>Create a collection</h1>
+    <p class="lead">
+      Start typing a unique collection name for which to bind your magic card collection to:
+    </p>
+    <p>
+      <input type="text" class="username" ng-model="collectionName" />
+    </p>
+    <p>
+      <button class="btn btn-lg btn-success" ng-disabled="!isNameUnique()" ng-click="createCollection()">Create!
+        <span class="glyphicon glyphicon-ok"></span>
+      </button>
+    </p>
+  </div>
 </div>
 
-<div class="">
-  <ul ng-repeat="collection in collections">
-    <li>
-      <a href="#/collection/{{collection.$id}}">{{collection.name}}</a>
-    </li>
-  </ul>
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>
+          #
+        </th>
+        <th>
+          Name
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="collection in collections">
+        <th scope="row">
+          {{$index+1}}
+        </th>
+        <td>
+          <a href="#/collection/{{collection.$id}}">{{collection.name}}</a>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
 </div>
