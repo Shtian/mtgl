@@ -1,6 +1,62 @@
+@import 'helpers';
+
 .search-section, .collection-section {
   li {
     list-style: none;
+  }
+  input {
+    font-size: em(24px);
+    line-height: 1.5em;
+    max-height: 50px;
+  }
+}
+
+.search-section {
+  position: relative;
+  .ac-list {
+    position: absolute;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    padding-right: 30px;
+  }
+  .ac-name {
+    max-width: 80%;
+  }
+  .ac-wrapper {
+    line-height: 30px;
+  }
+  input {
+    width: 100%;
+  }
+  button {
+    float: right;
+    margin-top: 4px;
+  }
+  .ac-hit {
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #c4c4c4;
+    border-top: none;
+    .placeholder {
+      float: left;
+      width: 43px;
+      height: 30px;
+      margin-right: 5px;
+      display: inline-block;
+      overflow: hidden;
+      position: relative;
+      border-radius: 3px;
+      img {
+        position: absolute;
+        width: 56px;
+        top: -9px;
+        right: -7px;
+      }
+    }
+  }
+  .ac-hit:last-child {
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
   }
 }
 

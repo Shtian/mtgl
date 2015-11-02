@@ -1,0 +1,14 @@
+@import 'params';
+
+html {
+  color: $text-color;
+  font-size: $base-font-size;
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+  line-height: 1.6;
+}
+
+input {
+  box-shadow: none;
+  border: 1px solid #888;
+}

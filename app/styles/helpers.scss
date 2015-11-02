@@ -1,6 +1,24 @@
+@import 'params';
+// HELPER FUNCTIONS
+@function em($px, $base: $base-font-size) {
+    @return ($px / $base) * 1em;
+}
+
+// MIXINS
+
+@mixin border-radius($radius) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+// ALIGNMENT
 .center {
   text-align: center;
 }
+
+// PADDING
 
 .padding-xs {
   padding: 5px;
@@ -22,8 +40,7 @@
   padding: 40px;
 }
 
-// Margin TOP BOTTOM
-
+// MARGINS
 
 .margin-tb-xs {
   margin: 5px 0px;

@@ -1,8 +1,17 @@
 // Imports
+@import 'params';
+@import 'base';
 @import 'helpers';
 @import 'collections';
 // bower:scss
 // endbower
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
 .browsehappy {
   margin: 0.2em 0;
@@ -69,10 +78,6 @@ body {
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-
   /* Remove the padding we set earlier */
   .header,
   .marketing,

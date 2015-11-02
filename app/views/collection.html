@@ -5,9 +5,27 @@
     </h1>
   </div>
 </div>
-<div class="container-fluid" ng-show="!!refItem.name">
-  <div class="page-header">
-    <h1>{{refItem.name}}</h1>
+<div class="container" ng-show="!!refItem.name">
+  <div class="row">
+    <div class="col-md-8">
+      <h1>{{refItem.name}}</h1>
+    </div>
+    <div class="col-md-4 search-section">
+      <input class="padding-xs" type="text" ng-model="searchTerm" placeholder="Add card"/>
+      <ul class="ac-list">
+        <li ng-repeat="result in searchResult" class="ac-hit">
+          <div class="ac-wrapper">
+            <div class="placeholder"><img src="{{result.editions[0].image_url}}" /></div>
+            <span class="ac-name">
+              {{result.name}}
+            </span>
+            <button class="btn btn-xs btn-success" ng-click="addCard(result)">Add
+              <span class="glyphicon glyphicon-plus"></span>
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
   <div class="row marketing">
     <div class="col-md-8 collection-section clearfix">
@@ -16,18 +34,6 @@
         <li ng-repeat="card in refItem.cards" class="margin-tb-s padding-s" ng-cloak>
           {{card.name}}
           <img src="{{card.editions[0].image_url}}" />
-        </li>
-      </ul>
-    </div>
-    <div class="col-md-4 search-section">
-      <h2>Add card:</h2>
-      <input type="text" ng-model="searchTerm" />
-      <ul class="padding-s">
-        <li ng-repeat="result in searchResult" class="margin-tb-s">
-          {{result.name}}
-          <button class="btn btn-xs btn-success" ng-click="addCard(result)">Add
-            <span class="glyphicon glyphicon-plus"></span>
-          </button>
         </li>
       </ul>
     </div>
