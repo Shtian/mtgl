@@ -14,7 +14,6 @@ angular.module('alexandriaApp')
     objectRef.$bindTo($scope, 'refItem');
 
     $scope.addCard = function(data) {
-      console.log(data);
       if (!objectRef.cards) {
         objectRef.cards = [];
       }
@@ -22,13 +21,21 @@ angular.module('alexandriaApp')
       objectRef.$save();
     };
 
+    $scope.clearSearch = function() {
+        $scope.searchTerm = '';
+        $scope.searchResult = [];
+    };
+
     function updateSearchResult() {
+      console.log('updating search');
       if ($scope.searchTerm) {
         deckbrewAPI.typeahead($scope.searchTerm)
           .success(function(res) {
             console.log(res);
             $scope.searchResult = res;
           });
+      } else {
+        $scope.searchResult = [];
       }
     }
 

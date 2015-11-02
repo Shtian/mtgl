@@ -27,7 +27,9 @@
     line-height: 30px;
   }
   input {
-    width: 100%;
+    width: 90%;
+    float: left;
+    border-right: none;
   }
   button {
     float: right;
@@ -57,6 +59,20 @@
   }
   .ac-hit:last-child {
     box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+  }
+  .remove-search {
+    font-size: em(24px);
+    line-height: 1.5em;
+    width: 10%;
+    border: 1px solid #c4c4c4;
+    border-left: none;
+    display: inline-block;
+    vertical-align: middle;
+    color: #c4c4c4;
+    &:hover{
+      color: #c42222;
+      cursor: pointer;
+    }
   }
 }
 

@@ -12,8 +12,9 @@
     </div>
     <div class="col-md-4 search-section">
       <input class="padding-xs" type="text" ng-model="searchTerm" placeholder="Add card"/>
+      <a class="remove-search padding-xs" ng-click="clearSearch()"><span class="glyphicon glyphicon-remove"></span></a>
       <ul class="ac-list">
-        <li ng-repeat="result in searchResult" class="ac-hit">
+        <li ng-repeat="result in searchResult track by result.id" class="ac-hit">
           <div class="ac-wrapper">
             <div class="placeholder"><img src="{{result.editions[0].image_url}}" /></div>
             <span class="ac-name">
