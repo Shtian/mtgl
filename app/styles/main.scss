@@ -2,6 +2,7 @@
 @import 'params';
 @import 'base';
 @import 'helpers';
+@import 'directives';
 @import 'collections';
 // bower:scss
 // endbower
@@ -23,6 +24,8 @@ html {
 body {
   padding: 0;
 }
+
+gp
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,

@@ -4,6 +4,10 @@
     @return ($px / $base) * 1em;
 }
 
+@mixin card-shadow-z1() {
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+}
+
 // MIXINS
 
 @mixin border-radius($radius) {

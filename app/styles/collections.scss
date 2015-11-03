@@ -1,4 +1,12 @@
 @import 'helpers';
+@import 'params';
+
+.collection {
+  h1 {
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
+}
 
 .search-section, .collection-section {
   li {
@@ -14,6 +22,7 @@
 .search-section {
   position: relative;
   .ac-list {
+    z-index: 200 !important;
     position: absolute;
     width: 100%;
     padding: 0;
@@ -77,17 +86,51 @@
 }
 
 .collection-section {
-  li {
-    position: relative;
-    img {
-      position: absolute;
-      top: 0;
-      left: 50px;
-      display: none;
-    }
+  text-align: center;
+  .color {
+    @include card-shadow-z1();
+    width: 13.3%;
+    min-width: 152px;
+    float: left;
+    min-height: 500px;
+    border: 1px solid #c4c4c4;
+    padding: 0 5px;
+    margin: 5px;
   }
-
-  li:hover img {
-    display: inline;
+  .color-white {
+    background: $mtg-white;
+  }
+  .color-black {
+    background: $mtg-black;
+  }
+  .color-blue {
+    background: $mtg-blue;
+  }
+  .color-red {
+    background: $mtg-red;
+  }
+  .color-green {
+    background: $mtg-green;
+  }
+  .color-multi {
+    background: $mtg-multi;
+  }
+  .color-colorless {
+    background: $mtg-colorless;
+  }
+  .card-list-title {
+    font-weight: bold;
+  }
+  .rare{
+    color: $mtg-rarity-rare;
+  }
+  .mythic{
+    color: $mtg-rarity-mythic;
+  }
+  .uncommon{
+    color: $mtg-rarity-uncommon;
+  }
+  .common{
+    color: $mtg-rarity-common;
   }
 }

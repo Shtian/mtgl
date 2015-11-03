@@ -5,7 +5,7 @@
     </h1>
   </div>
 </div>
-<div class="container" ng-show="!!refItem.name">
+<div class="container collection" ng-show="!!refItem.name">
   <div class="row">
     <div class="col-md-8">
       <h1>{{refItem.name}}</h1>
@@ -29,10 +29,57 @@
     </div>
   </div>
   <div class="row marketing">
-    <div class="col-md-8 collection-section clearfix">
-      <ul class="padding-xs">
-        <list-item-card ng-repeat="card in refItem.cards" class="margin-tb-s padding-s" card-data="card" />
-      </ul>
+    <div class="collection-section clearfix">
+      <div class="row">
+        <div class="color color-white">
+          <h3>White</h3>
+          <card-list cards="refItem.cards" title="Creatures"></card-list>
+          <card-list cards="refItem.cards" title="Enchants"/></card-list>
+          <card-list cards="refItem.cards" title="Sorceries"></card-list>
+          <card-list cards="refItem.cards" title="Instants"></card-list>
+        </div>
+        <div class="color color-red">
+          <h3>Red</h3>
+          <card-list cards="refItem.cards" title="Creatures"/></card-list>
+          <card-list cards="refItem.cards" title="Enchants"/></card-list>
+          <card-list cards="refItem.cards" title="Sorceries"></card-list>
+          <card-list cards="refItem.cards" title="Instants"></card-list>
+        </div>
+        <div class="color color-blue">
+          <h3>Blue</h3>
+          <card-list cards="refItem.cards" title="Creatures"/></card-list>
+          <card-list cards="refItem.cards" title="Enchants"/></card-list>
+          <card-list cards="refItem.cards" title="Sorceries"></card-list>
+          <card-list cards="refItem.cards" title="Instants"></card-list>
+        </div>
+        <div class="color color-black">
+          <h3>Black</h3>
+          <card-list cards="refItem.cards" title="Creatures"/></card-list>
+          <card-list cards="refItem.cards" title="Enchants"/></card-list>
+          <card-list cards="refItem.cards" title="Sorceries"></card-list>
+          <card-list cards="refItem.cards" title="Instants"></card-list>
+        </div>
+        <div class="color color-green">
+          <h3>Green</h3>
+          <card-list cards="refItem.cards" title="Creatures"/></card-list>
+          <card-list cards="refItem.cards" title="Enchants"/></card-list>
+          <card-list cards="refItem.cards" title="Sorceries"></card-list>
+          <card-list cards="refItem.cards" title="Instants"></card-list>
+        </div>
+        <div class="color color-multi">
+          <h3>Multicolored</h3>
+          <card-list cards="refItem.cards" title="Creatures"/></card-list>
+          <card-list cards="refItem.cards" title="Enchants"/></card-list>
+          <card-list cards="refItem.cards" title="Sorceries"></card-list>
+          <card-list cards="refItem.cards" title="Instants"></card-list>
+        </div>
+        <div class="color color-colorless">
+          <h3>Colorless</h3>
+          <card-list cards="refItem.cards" title="Creatures"/></card-list>
+          <card-list cards="refItem.cards" title="Artifacts"></card-list>
+          <card-list cards="refItem.cards" title="Lands"></card-list>
+        </div>
+      </div>
     </div>
   </div>
 </div>
