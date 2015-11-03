@@ -30,12 +30,8 @@
   </div>
   <div class="row marketing">
     <div class="col-md-8 collection-section clearfix">
-      <h2>My collection:</h2>
-      <ul class="padding-s">
-        <li ng-repeat="card in refItem.cards" class="margin-tb-s padding-s" ng-cloak>
-          {{card.name}}
-          <img src="{{card.editions[0].image_url}}" />
-        </li>
+      <ul class="padding-xs">
+        <list-item-card ng-repeat="card in refItem.cards" class="margin-tb-s padding-s" card-data="card" />
       </ul>
     </div>
   </div>

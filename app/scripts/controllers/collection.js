@@ -12,18 +12,13 @@ angular.module('alexandriaApp')
     var ref = new Firebase(FIREBASE_REF + 'collections/' + $routeParams.collectionId);
     var objectRef = $firebaseObject(ref);
     objectRef.$bindTo($scope, 'refItem');
-
+    
     $scope.addCard = function(data) {
       if (!objectRef.cards) {
         objectRef.cards = [];
       }
       objectRef.cards.push(data);
       objectRef.$save();
-    };
-
-    $scope.clearSearch = function() {
-        $scope.searchTerm = '';
-        $scope.searchResult = [];
     };
 
     function updateSearchResult() {
@@ -38,6 +33,11 @@ angular.module('alexandriaApp')
         $scope.searchResult = [];
       }
     }
+
+    $scope.clearSearch = function() {
+        $scope.searchTerm = '';
+        $scope.searchResult = [];
+    };
 
     $scope.$watch('searchTerm', _.debounce(updateSearchResult, 500));
   }]);
