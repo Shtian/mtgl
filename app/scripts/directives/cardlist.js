@@ -23,7 +23,7 @@ angular.module('alexandriaApp')
         scope.title = attrs.title;
         scope.showList = false;
         var unwatch = scope.$watch('cards', function(cards) {
-          if(cards){
+          if(cards && cards.length){
             scope.showList = cards.length;
             unwatch();
           }
