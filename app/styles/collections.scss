@@ -21,9 +21,16 @@
 
 .search-section {
   position: relative;
+  .search-wrapper {
+    position: relative;
+    a {
+
+    }
+  }
   .ac-list {
     z-index: 200 !important;
     position: absolute;
+    top: 43px;
     width: 100%;
     padding: 0;
     margin: 0;
@@ -36,9 +43,8 @@
     line-height: 30px;
   }
   input {
-    width: 90%;
+    width: 100%;
     float: left;
-    border-right: none;
   }
   button {
     float: right;
@@ -70,11 +76,12 @@
     box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
   }
   .remove-search {
+    position: absolute;
+    top: 4px;
+    right: 0;
     font-size: em(24px);
     line-height: 1.5em;
     width: 10%;
-    border: 1px solid #c4c4c4;
-    border-left: none;
     display: inline-block;
     vertical-align: middle;
     color: #c4c4c4;
@@ -117,9 +124,6 @@
   }
   .color-colorless {
     background: $mtg-colorless;
-  }
-  .card-list-title {
-    font-weight: bold;
   }
   .rare{
     color: $mtg-rarity-rare;

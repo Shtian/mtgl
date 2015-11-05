@@ -31,12 +31,10 @@ angular.module('alexandriaApp')
         if($scope.refItem && $scope.refItem.cards){
           _.each($scope.refItem.cards, function(card){
             if(!card.colors || !card.colors.length){
-              console.log('colorless');
               $scope.colorlessCards.push(card);
               return;
             }
             if(card.colors.length > 1){
-              console.log('multi');
               $scope.multicolorCards.push(card);
               return;
             }
@@ -77,7 +75,7 @@ angular.module('alexandriaApp')
           .success(function(res) {
             $scope.searchResult = res;
           });
-      } else {
+      } else if($scope.searchResult) {
         $scope.searchResult = [];
       }
     }
@@ -86,7 +84,10 @@ angular.module('alexandriaApp')
         $scope.searchTerm = '';
         $scope.searchResult = [];
     };
-
+    $scope.$on('EmittedEvent', function(event, message){
+      console.log('controller caught event');
+      $scope.$broadcast(message.name, message.data);
+    });
     $scope.$watch('refItem', setLocalCardList);
     $scope.$watch('searchTerm', _.debounce(updateSearchResult, 500));
   }]);

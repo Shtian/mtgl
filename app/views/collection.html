@@ -6,17 +6,20 @@
   </div>
 </div>
 <div class="container collection" ng-show="!!refItem.name">
+  <card-preview></card-preview>
   <div class="row">
     <div class="col-md-8">
       <h1>{{refItem.name}}</h1>
     </div>
     <div class="col-md-4 search-section">
-      <input class="padding-xs" type="text" ng-model="searchTerm" placeholder="Add card"/>
-      <a class="remove-search padding-xs" ng-click="clearSearch()"><span class="glyphicon glyphicon-remove"></span></a>
+      <div class="search-wrapper">
+        <input class="padding-xs" type="text" ng-model="searchTerm" placeholder="Add card"/>
+        <a class="remove-search padding-xs" ng-click="clearSearch()"><span class="glyphicon glyphicon-remove"></span></a>
+      </div>
       <ul class="ac-list">
-        <li ng-repeat="result in searchResult track by result.id" class="ac-hit">
+        <li ng-repeat="result in searchResult track by result.id" class="ac-hit" ng-cloak>
           <div class="ac-wrapper">
-            <div class="placeholder"><img src="{{result.editions[0].image_url}}" /></div>
+            <div class="placeholder"><img ng-src="{{ result && result.editions[0].image_url || '' }}" /></div>
             <span class="ac-name">
               {{result.name}}
             </span>
@@ -33,31 +36,52 @@
       <div class="row">
         <div class="color color-white">
           <h3>White</h3>
-          <card-list cards="whiteCards | isCreature" title="Creatures"></card-list>
+          <card-list cards="whiteCards" title="Creatures" type-name="creature"></card-list>
+          <card-list cards="whiteCards" title="Sorceries" type-name="sorcery"></card-list>
+          <card-list cards="whiteCards" title="Instants" type-name="instant"></card-list>
+          <card-list cards="whiteCards" title="Planeswalkers" type-name="planeswalker"></card-list>
         </div>
         <div class="color color-red">
           <h3>Red</h3>
-          <card-list cards="redCards | isCreature" title="Creatures"/></card-list>
+          <card-list cards="redCards" title="Creatures" type-name="creature"></card-list>
+          <card-list cards="redCards" title="Sorceries" type-name="sorcery"></card-list>
+          <card-list cards="redCards" title="Instants" type-name="instant"></card-list>
+          <card-list cards="redCards" title="Planeswalkers" type-name="planeswalker"></card-list>
         </div>
         <div class="color color-blue">
           <h3>Blue</h3>
-          <card-list cards="blueCards | isCreature" title="Creatures"/></card-list>
+          <card-list cards="blueCards" title="Creatures" type-name="creature"></card-list>
+          <card-list cards="blueCards" title="Sorceries" type-name="sorcery"></card-list>
+          <card-list cards="blueCards" title="Instants" type-name="instant"></card-list>
+          <card-list cards="blueCards" title="Planeswalkers" type-name="planeswalker"></card-list>
         </div>
         <div class="color color-black">
           <h3>Black</h3>
-          <card-list cards="blackCards | isCreature" title="Creatures"/></card-list>
+          <card-list cards="blackCards" title="Creatures" type-name="creature"></card-list>
+          <card-list cards="blackCards" title="Sorceries" type-name="sorcery"></card-list>
+          <card-list cards="blackCards" title="Instants" type-name="instant"></card-list>
+          <card-list cards="blackCards" title="Planeswalkers" type-name="planeswalker"></card-list>
         </div>
         <div class="color color-green">
           <h3>Green</h3>
-          <card-list cards="greenCards | isCreature" title="Creatures"/></card-list>
+          <card-list cards="greenCards" title="Creatures" type-name="creature"></card-list>
+          <card-list cards="greenCards" title="Sorceries" type-name="sorcery"></card-list>
+          <card-list cards="greenCards" title="Instants" type-name="instant"></card-list>
+          <card-list cards="greenCards" title="Planeswalkers" type-name="planeswalker"></card-list>
         </div>
         <div class="color color-multi">
           <h3>Multicolored</h3>
-          <card-list cards="multicolorCards | isCreature" title="Creatures"/></card-list>
+          <card-list cards="multicolorCards" title="Creatures" type-name="creature"></card-list>
+          <card-list cards="multicolorCards" title="Sorceries" type-name="sorcery"></card-list>
+          <card-list cards="multicolorCards" title="Instants" type-name="instant"></card-list>
+          <card-list cards="multicolorCards" title="Planeswalkers" type-name="planeswalker"></card-list>
         </div>
         <div class="color color-colorless">
           <h3>Colorless</h3>
-          <card-list cards="colorlessCards | isCreature" title="Creatures"/></card-list>
+          <card-list cards="colorlessCards" title="Creatures" type-name="creature"></card-list>
+          <card-list cards="colorlessCards" title="Artifacts" type-name="artifact"></card-list>
+          <card-list cards="colorlessCards" title="Lands" type-name="land"></card-list>
+          <card-list cards="colorlessCards" title="Planeswalkers" type-name="planeswalker"></card-list>
         </div>
       </div>
     </div>

@@ -10,9 +10,35 @@ list-item-card {
 }
 
 card-list {
+  .card-list-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
   ul{
     padding: 0;
     margin: 0;
     margin-bottom: 10px;
+  }
+}
+
+card-preview {
+  display: block;
+  position: fixed;
+  height: 250px;
+  width: 180px;
+  border-radius: 10px;
+  border: 2px solid #fff;
+  background-color: #fff;
+  top: 0px;
+  left: 0px;
+  pointer-events: none;
+  display: none;
+  z-index: 300 !important;
+  box-shadow: 0 6px 20px 0 rgba(0,0,0,.19);
+  .preview-image {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-repeat: no-repeat;
   }
 }
