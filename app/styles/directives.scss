@@ -9,6 +9,10 @@ list-item-card {
     &.foil {
       background: linear-gradient(to right, rgba(194,241,101,0.3) 0%, rgba(194,241,101,0.3) 2%, rgba(254,84,32,0.3) 51%, rgba(254,84,32,0.16) 100%);
     }
+
+    &:hover .glyphicon-cog{
+      visibility: visible;
+    }
   }
   .card-mini-menu {
     display: inline;
@@ -24,6 +28,7 @@ list-item-card {
   .glyphicon-cog {
     float: right;
     margin-top: 2px;
+    visibility: hidden;
   }
 }
 
