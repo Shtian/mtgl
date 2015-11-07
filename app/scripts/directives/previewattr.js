@@ -7,7 +7,7 @@
  * # previewAttr
  */
 angular.module('alexandriaApp')
-  .directive('previewAttr', function () {
+  .directive('previewAttr', function() {
     return {
       restrict: 'A',
       scope: {
@@ -15,14 +15,26 @@ angular.module('alexandriaApp')
       },
       link: function postLink(scope, element) {
         element.on('mouseenter', function(event) {
+          if (scope.$parent && scope.$parent.showmenu) {
+            return;
+          }
+
           var card = scope.card();
-          scope.$emit('EmittedEvent',
-          { name: 'CardHover', data:
-            { card: card, x: event.pageX, y: event.pageY }
+
+          scope.$emit('EmittedEvent', {
+            name: 'CardHover',
+            data: {
+              card: card,
+              x: event.pageX,
+              y: event.pageY
+            }
           });
         });
+
         element.on('mouseleave', function() {
-            element.removeClass(scope.hoverClass);
+          scope.$emit('EmittedEvent', {
+            name: 'CardHoverExit'
+          });
         });
       }
     };

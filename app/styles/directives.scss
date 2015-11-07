@@ -7,6 +7,20 @@ list-item-card {
     text-align: left;
     font-size: em(12px);
   }
+  .card-mini-menu {
+    display: inline;
+
+    .glyphicon {
+      margin-right: 8px;
+    }
+
+  }
+  .glyphicon:hover {
+    cursor: pointer;
+  }
+  .glyphicon-cog {
+    float: right;
+  }
 }
 
 card-list {
