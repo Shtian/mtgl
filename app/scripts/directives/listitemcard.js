@@ -22,7 +22,7 @@ angular.module('alexandriaApp')
       scope: {
         card: '=cardData'
       },
-      link: function postLink(scope) {
+      link: function postLink(scope, element) {
         scope.showmenu = false;
         scope.card.count = scope.card.count || 1;
         scope.card.foil = (typeof scope.card.foil === 'undefined') ? false : scope.card.foil;
@@ -51,6 +51,7 @@ angular.module('alexandriaApp')
         };
 
         scope.deleteCard = function(){
+          element.remove();
           scope.$emit('DeleteCard', scope.card);
         };
       }

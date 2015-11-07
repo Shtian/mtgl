@@ -27,6 +27,7 @@ angular.module('alexandriaApp')
     resetlocalCardLists();
 
     function setLocalCardList(){
+      console.log('set list triggered');
         resetlocalCardLists();
         if($scope.refItem && $scope.refItem.cards){
           _.each($scope.refItem.cards, function(card){
@@ -82,12 +83,22 @@ angular.module('alexandriaApp')
       }
     }
 
+    function removeCard(key){
+      _.remove($scope.refItem.cards, function(card) {
+        return card.$$hashKey === key;
+      });
+      setLocalCardList();
+    }
+
     $scope.clearSearch = function() {
         $scope.searchTerm = '';
         $scope.searchResult = [];
     };
     $scope.$on('EmittedEvent', function(event, message){
       $scope.$broadcast(message.name, message.data);
+    });
+    $scope.$on('DeleteCard', function(event, data){
+      removeCard(data.$$hashKey);
     });
     $scope.$watch('refItem', setLocalCardList);
     $scope.$watch('searchTerm', _.debounce(updateSearchResult, 500));
