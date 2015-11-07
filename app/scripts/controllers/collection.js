@@ -67,6 +67,8 @@ angular.module('alexandriaApp')
       }
       objectRef.cards.push(data);
       objectRef.$save();
+
+      $scope.clearSearch();
     };
 
     function updateSearchResult() {
