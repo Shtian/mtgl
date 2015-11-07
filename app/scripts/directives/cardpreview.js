@@ -34,7 +34,7 @@ angular.module('alexandriaApp')
         });
 
         function setImage(url, x, y, display) {
-          var displayValue = display ? "inline" : "none";
+          var displayValue = display ? 'inline' : 'none';
           element.css({
             'background-image': 'url("'+ url +'")',
             'background-size': 'cover',

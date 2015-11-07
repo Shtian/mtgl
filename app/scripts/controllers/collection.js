@@ -87,7 +87,6 @@ angular.module('alexandriaApp')
         $scope.searchResult = [];
     };
     $scope.$on('EmittedEvent', function(event, message){
-      console.log('controller caught event');
       $scope.$broadcast(message.name, message.data);
     });
     $scope.$watch('refItem', setLocalCardList);

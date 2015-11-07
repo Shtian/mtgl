@@ -19,7 +19,7 @@
       <ul class="ac-list">
         <li ng-repeat="result in searchResult track by result.id" class="ac-hit" ng-cloak>
           <div class="ac-wrapper">
-            <div class="placeholder"><img ng-src="{{ result && result.editions[0].image_url || '' }}" /></div>
+            <div class="placeholder"><img ng-src="{{ result && result.editions[0].image_url || '' }}" preview-attr="result"/></div>
             <span class="ac-name">
               {{result.name}}
             </span>
