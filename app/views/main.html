@@ -2,11 +2,24 @@
   <div class="jumbotron">
     <h1>Create a collection</h1>
     <p class="lead">
-      Start typing a unique collection name for which to bind your magic card collection to:
+      Type a collection name for your MTG card collection:
     </p>
-    <p>
-      <input type="text" class="username" ng-model="collectionName" />
-    </p>
+    <div class="form-horizontal">
+      <div class="form-group">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+          <input type="text" id="username" class="form-control" ng-model="collectionName" placeholder="Collection name" autofocus accept="">
+        </div>
+        <div class="col-sm-4"></div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="description" ng-model="description" placeholder="Optional description">
+        </div>
+        <div class="col-sm-4"></div>
+      </div>
+    </div>
     <p>
       <button class="btn btn-lg btn-success" ng-disabled="!isNameUnique()" ng-click="createCollection()">Create!
         <span class="glyphicon glyphicon-ok"></span>
@@ -14,26 +27,39 @@
     </p>
   </div>
 </div>
-
-<div class="container">
+<div class="container-fluid center" ng-show="!collections.length">
+  <div class="row marketing">
+    <h1>
+      <span class="glyphicon glyphicon-cog glyphicon-spin"></span>
+    </h1>
+  </div>
+</div>
+<div class="container" ng-show="!!collections.length">
+  Search: <input type="text" name="" id="" ng-model="query" />
   <table class="table table-striped">
     <thead>
       <tr>
         <th>
-          #
+          Name
         </th>
         <th>
-          Name
+          Description
+        </th>
+        <th>
+          Cards
         </th>
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="collection in collections">
-        <th scope="row">
-          {{$index+1}}
-        </th>
+      <tr ng-repeat="collection in collections | filter:query | orderBy: 'name'">
         <td>
           <a href="#/collection/{{collection.$id}}">{{collection.name}}</a>
+        </td>
+        <td>
+          {{collection.description}}
+        </td>
+        <td>
+          {{collection.cards.length || 0}}
         </td>
       </tr>
     </tbody>

@@ -27,7 +27,6 @@ angular.module('alexandriaApp')
     resetlocalCardLists();
 
     function setLocalCardList(){
-      console.log('set list triggered');
         resetlocalCardLists();
         if($scope.refItem && $scope.refItem.cards){
           _.each($scope.refItem.cards, function(card){
