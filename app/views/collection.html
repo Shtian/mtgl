@@ -11,7 +11,7 @@
     <div class="col-md-8">
       <h1>{{refItem.name}}</h1>
     </div>
-    <div class="col-md-4 search-section">
+    <div class="col-md-4 pull-right search-section">
       <div class="search-wrapper">
         <input class="padding-xs" type="text" ng-model="searchTerm" placeholder="Add card"/>
         <a class="remove-search padding-xs" ng-click="clearSearch()"><span class="glyphicon glyphicon-remove"></span></a>
@@ -29,6 +29,11 @@
           </div>
         </li>
       </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+        <collection-navigation current="overview" collection-id="{{collectionId}}"></collection-navigation>
     </div>
   </div>
   <div class="row marketing">
@@ -94,6 +99,12 @@
     </div>
   </div>
   <div class="row marketing">
-    <div d3-manacurve data="refItem.cards"></div>
+    <h2><span class="glyphicon glyphicon-stats"></span> Statistics</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Manacurve</h3>
+        <div d3-manacurve data="refItem.cards"></div>
+      </div>
+    </div>
   </div>
 </div>

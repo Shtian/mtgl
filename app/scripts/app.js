@@ -32,6 +32,11 @@ angular
         controller: 'CollectionCtrl',
         controllerAs: 'collection'
       })
+      .when('/collection/:collectionId/import', {
+        templateUrl: 'views/import.html',
+        controller: 'ImportCtrl',
+        controllerAs: 'import'
+      })
       .otherwise({
         redirectTo: '/'
       });

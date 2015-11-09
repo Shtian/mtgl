@@ -35,7 +35,6 @@ angular.module('alexandriaApp')
           }
 
           mapData(data);
-          console.log(CMCs);
           // remove all previous items before render
           svg.selectAll('*').remove();
           // setup variables

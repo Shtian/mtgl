@@ -1,3 +1,4 @@
+@import 'params';
 // cardList and listItemCard directives
 list-item-card {
   li {
@@ -64,5 +65,20 @@ card-preview {
     height: 100%;
     pointer-events: none;
     background-repeat: no-repeat;
+  }
+}
+
+collection-navigation {
+  a {
+    color: $text-color;
+    font-size: em(20px);
+    margin-right: 25px;
+    &.active {
+      border-bottom: 2px solid $mtg-green;
+    }
+    &:hover, &:active {
+      color: $text-color;
+      text-decoration: none;
+    }
   }
 }

@@ -12,6 +12,7 @@ angular.module('alexandriaApp')
     var ref = new Firebase(FIREBASE_REF + 'collections/' + $routeParams.collectionId);
     var objectRef = $firebaseObject(ref);
     objectRef.$bindTo($scope, 'refItem');
+    $scope.collectionId = $routeParams.collectionId;
     // Blocks of card categories
 
     function resetlocalCardLists(){
