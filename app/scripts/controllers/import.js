@@ -63,6 +63,7 @@ angular.module('alexandriaApp')
     };
 
     function addCardsToCollection(cards){
+      objectRef.cards = objectRef.cards || [];
       _.each(cards, function(card){
         objectRef.cards.push(card);
       });

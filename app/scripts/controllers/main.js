@@ -14,7 +14,7 @@ angular.module('alexandriaApp')
 
     $scope.createCollection = function() {
         var name = $scope.collectionName;
-        var description = $scope.description;
+        var description = $scope.description || '';
         var url = name.trim().toLowerCase().replace(/\s/g, '-').replace(/[^a-zA-Z0-9_.+-]/g, '');
         $scope.collections.$add({
           name: name,
